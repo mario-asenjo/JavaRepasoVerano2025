@@ -1,3 +1,4 @@
+# BLOQUE I
 > En este primer bloque se trabaja el pensamiento lógico aplicado a la programación a través del lenguaje Java.
 > Los ejercicios están diseñados para familiarizar al alumno con las estructuras de control más comunes (if, switch, while, for, do-while) y el uso de arrays unidimensionales.
 >
