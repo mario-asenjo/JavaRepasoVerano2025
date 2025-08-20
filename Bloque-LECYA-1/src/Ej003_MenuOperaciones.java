@@ -54,8 +54,8 @@ public class Ej003_MenuOperaciones {
     public static void main(String[] args) {
         boolean running;
         Scanner myScanner;
-        myScanner = new Scanner(System.in);
 
+        myScanner = new Scanner(System.in);
         running = true;
         while (running)
             running = requestOption(myScanner);
