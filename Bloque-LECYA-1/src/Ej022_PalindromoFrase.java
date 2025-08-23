@@ -1,6 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Ej022_PalindromoFrase {
     public static String requestWord(String message, Scanner sc) {
@@ -14,12 +12,13 @@ public class Ej022_PalindromoFrase {
     public static String clean(String phrase) {
         StringBuilder mySB;
         Map<Character, Character> accent_raw;
-
+        ArrayList<Character> punctuation;
 
         mySB = new StringBuilder();
         accent_raw = new HashMap<>(Map.of('á','a','é','e', 'í','i', 'ó','o', 'ú','u'));
+        punctuation = new ArrayList<Character>(List.of('.', ';', ','));
         for (int i = 0; i < phrase.length(); i++) {
-            if (phrase.charAt(i) != ' ')
+            if (phrase.charAt(i) != ' ' && !punctuation.contains(phrase.charAt(i)))
                 mySB.append(phrase.charAt(i));
         }
         for (int i = 0; i < mySB.length(); i++) {
@@ -30,16 +29,11 @@ public class Ej022_PalindromoFrase {
     }
 
     public static boolean isPalindrome(String word) {
-        boolean flag;
-
-        flag = false;
         for (int i = word.length(); i > 0; i--) {
-            if (word.charAt(word.length() - i) == word.charAt(i - 1))
-                flag = true;
-            else
-                flag = false;
+            if (word.charAt(word.length() - i) != word.charAt(i - 1))
+                return (false);
         }
-        return (flag);
+        return (true);
     }
 
     public static void printIsPalindromePhrase(String phrase) {
